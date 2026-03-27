@@ -155,7 +155,7 @@ const Hero = () => {
                 {[
                   { num: 1, content: <><span className="text-[#00E5FF]">name</span>: <span className="text-amber-300">"Vinay Verma"</span>,</> },
                   { num: 2, content: <><span className="text-[#00E5FF]">role</span>: <span className="text-amber-300">"Full Stack Dev"</span>,</> },
-                  { num: 3, content: <><span className="text-[#00E5FF]">stack</span>: [<span className="text-amber-300">"React"</span>, <span className="text-amber-300">"Node"</span>],</> },
+                  { num: 3, content: <><span className="text-[#00E5FF]">stack</span>: [<span className="text-amber-300">"React"</span>, <span className="text-amber-300">"Node"</span>,<span className="text-amber-300">"MongoDB"</span>,<span className="text-amber-300">"Express"</span>],</> },
                   { num: 4, content: <><span className="text-[#00E5FF]">cgpa</span>: <span className="text-purple-400">8.31</span>,</> },
                   { num: 5, content: <><span className="text-[#00E5FF]">openTo</span>: <span className="text-amber-300">"opportunities"</span>,</> },
                   { num: 6, content: <><span>{'}'};</span></> }
