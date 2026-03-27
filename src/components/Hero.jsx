@@ -1,9 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SiReact, SiMongodb, SiNodedotjs, SiTailwindcss, SiJavascript } from 'react-icons/si';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
+  const titles = ["Full Stack Developer", "UI/UX Designer", "Product Manager", "Problem Solver"];
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 2500); // Change title every 2.5 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen pt-32 pb-16 bg-[#020D1D] relative overflow-hidden flex items-center">
       {/* Background Ambience */}
@@ -39,8 +51,20 @@ const Hero = () => {
               </h1>
             </div>
             
-            <h2 className="text-xl md:text-2xl font-mono-custom text-[#00E5FF] mb-6 font-semibold flex items-center gap-2">
-              <span className="text-purple-400">{'>'}</span> Full Stack Developer
+            <h2 className="text-xl md:text-2xl font-mono-custom text-[#00E5FF] mb-6 font-semibold flex items-center gap-2 h-8">
+              <span className="text-purple-400 shrink-0">{'>'}</span> 
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentTitleIndex}
+                  initial={{ opacity: 0, y: 15, rotateX: 90 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  exit={{ opacity: 0, y: -15, rotateX: -90 }}
+                  transition={{ duration: 0.4, type: "spring", stiffness: 200, damping: 20 }}
+                  className="inline-block origin-bottom"
+                >
+                  {titles[currentTitleIndex]}
+                </motion.span>
+              </AnimatePresence>
             </h2>
             
             <p className="text-[#8BA3B8] max-w-lg text-lg leading-relaxed mb-8 font-medium">
