@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Experience', href: '/skills' },
     { name: 'Projects', href: '/projects' },
     { name: 'Certifications', href: '/certifications' },
     { name: 'Achievements', href: '/achievements' },
@@ -43,8 +44,8 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden lg:block relative z-50">
+            <div className="ml-10 flex items-baseline space-x-6 xl:space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -53,7 +54,7 @@ const Navbar = () => {
                     location.pathname === link.href 
                     ? 'border border-[#00E5FF]/50 bg-[#00E5FF]/30 text-[#00E5FF] px-4 py-2 rounded-lg' 
                     : 'text-[#8BA3B8] hover:text-white px-2 py-2'
-                  } text-sm font-mono-custom font-semibold transition-all duration-300`}
+                  } text-xs xl:text-sm font-mono-custom font-semibold transition-all duration-300`}
                 >
                   {link.name}
                 </Link>
@@ -76,7 +77,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-[#090d14]/95 backdrop-blur-md absolute w-full top-full left-0 border-b border-cyan-900/30">
-          <div className="px-4 pt-4 pb-6 space-y-4 shadow-2xl">
+          <div className="px-4 pt-4 pb-6 space-y-4 shadow-2xl relative z-50">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
