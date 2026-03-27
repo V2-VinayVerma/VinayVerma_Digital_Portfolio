@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
@@ -26,6 +27,7 @@ const Home = () => (
 );
 
 const SkillsPage = () => <Skills />;
+const ExperiencePage = () => <Experience />;
 const ProjectsPage = () => <Projects />;
 const CertificationsPage = () => <Certifications />;
 const AchievementsPage = () => <Achievements />;
@@ -47,6 +49,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/certifications" element={<CertificationsPage />} />
