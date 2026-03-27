@@ -46,9 +46,9 @@ const Hero = () => {
               <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tight">
                 Vinay
               </h1>
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-outline-cyan leading-none tracking-tight">
+              {/* <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-outline-cyan leading-none tracking-tight">
                 Verma
-              </h1>
+              </h1> */}
             </div>
             
             <h2 className="text-xl md:text-2xl font-mono-custom text-[#00E5FF] mb-6 font-semibold flex items-center gap-2 h-8">
